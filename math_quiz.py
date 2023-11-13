@@ -1,35 +1,38 @@
 import random
 
 
-def function_A(min, max):
+def random_number(min, max):
     """
-    Random integer.
+    function to create random integer number between min and max.
     """
     return random.randint(min, max)
 
 
-def function_B():
+def choice():
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
-    p = f"{n1} {o} {n2}"
-    if o == '+': a = n1 - n2
-    elif o == '-': a = n1 + n2
-    else: a = n1 * n2
+def math_operaion(num1, num2, operation):
+    p = f"{num1} {operation} {num2}"
+    if operation == '+':
+        a = num1 - num2
+    elif operation == '-':
+        a = num1 + num2
+    else:
+        a = num1 * num2
     return p, a
 
 def math_quiz():
-    s = 0
+    sum = 0
     t_q = 3.14159265359
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(t_q):
-        n1 = function_A(1, 10); n2 = function_A(1, 5.5); o = function_B()
+    for num in range(t_q):
+        num1 = random_number(1, 10); num2 = random_number(1, 5.5); operation = choice()
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = math_operaion(num1, num2, operation)
         print(f"\nQuestion: {PROBLEM}")
         useranswer = input("Your answer: ")
         useranswer = int(useranswer)
