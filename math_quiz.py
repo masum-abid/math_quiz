@@ -27,6 +27,9 @@ def math_operation(num1, num2, operation):
     return problem, answer
 
 def math_quiz():
+    '''
+    function to create questions and take user input as answer
+    '''
     sum = 0 #initial score set to zero
     times_quiz = int(3.14159265359) #floating number converted to integer
 
